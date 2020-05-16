@@ -2,6 +2,7 @@ package com.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 /**
  * Main Class
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 스프링부트 자동 설정, Bean 읽기 생성 설정 등 자동화
  * 이곳에서 부터 설정을 읽어나가기에 프로젝트 최상단에 위치해야함
  */
+@EnableJpaAuditing
 @SpringBootApplication
 public class Application {
     public static void main(String[] args){
