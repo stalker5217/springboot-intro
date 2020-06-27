@@ -1,20 +1,24 @@
 package com.springboot.web;
 
+import com.springboot.config.auth.LoginUser;
+import com.springboot.config.auth.dto.SessionUser;
 import com.springboot.service.posts.PostsService;
 
 import com.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+
+import javax.servlet.http.HttpSession;
 
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
     private final PostsService postsService;
+    private final HttpSession httpSession;
 
     /**
      * Mustache-starter 의존성 주입으로
@@ -24,8 +28,16 @@ public class IndexController {
      *              index.mustache로 쿼리 결과가 전달된다.
      */
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model, @LoginUser SessionUser user){
         model.addAttribute("posts", postsService.findAllDesc());
+
+        if(user != null){
+            System.out.println(user.getName());
+            System.out.println(user.getEmail());
+            System.out.println(user.getPicture());
+            model.addAttribute("userName", user.getName());
+        }
+
         return "index";
     }
 
