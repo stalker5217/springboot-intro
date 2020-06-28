@@ -2,7 +2,104 @@
 
 본 프로젝트는 
 '스프링 부트와 AWS로 혼자 구현하는 웹 서비스, 이동욱, 프리렉'
-의 내용의 clone coding입니다.
+내용의 clone coding입니다.
+
+```
+springboot_intro
+|   .gitignore
+|   build.gradle
+|   gradlew
+|   gradlew.bat
+|   README.md
+|   settings.gradle
+|           
+\---src
+    +---main
+    |   +---java
+    |   |   \---com
+    |   |       \---springboot
+    |   |           |   Application.java
+    |   |           |   
+    |   |           +---config
+    |   |           |   |   JpaConfig.java
+    |   |           |   |   WebConfig.java
+    |   |           |   |   
+    |   |           |   \---auth
+    |   |           |       |   CustomOAuth2UserService.java
+    |   |           |       |   LoginUser.java
+    |   |           |       |   LoginUserArgumentResolver.java
+    |   |           |       |   SecurityConfig.java
+    |   |           |       |   
+    |   |           |       \---dto
+    |   |           |               OAuthAttributes.java
+    |   |           |               SessionUser.java
+    |   |           |               
+    |   |           +---domain
+    |   |           |   |   BaseTimeEntity.java
+    |   |           |   |   
+    |   |           |   +---posts
+    |   |           |   |       Posts.java
+    |   |           |   |       PostsRepository.java
+    |   |           |   |       
+    |   |           |   \---user
+    |   |           |           Role.java
+    |   |           |           User.java
+    |   |           |           UserRepository.java
+    |   |           |           
+    |   |           +---service
+    |   |           |   \---posts
+    |   |           |           PostsService.java
+    |   |           |           
+    |   |           \---web
+    |   |               |   HelloController.java
+    |   |               |   IndexController.java
+    |   |               |   PostsApiController.java
+    |   |               |   
+    |   |               \---dto
+    |   |                       HelloResponseDto.java
+    |   |                       PostsListResponseDto.java
+    |   |                       PostsResponseDto.java
+    |   |                       PostsSaveRequestDto.java
+    |   |                       PostsUpdateRequestDto.java
+    |   |                       
+    |   \---resources
+    |       |   application-oauth.properties
+    |       |   application-real-db.properties
+    |       |   application-real.properties
+    |       |   application.properties
+    |       |   
+    |       +---static
+    |       |   \---js
+    |       |       \---app
+    |       |               index.js
+    |       |               
+    |       \---templates
+    |           |   index.mustache
+    |           |   posts-save.mustache
+    |           |   posts-update.mustache
+    |           |   
+    |           \---layout
+    |                   footer.mustache
+    |                   header.mustache
+    |                   
+    \---test
+        +---java
+        |   \---com
+        |       \---springboot
+        |           +---domain
+        |           |   \---posts
+        |           |           PostsRepositoryTest.java
+        |           |           
+        |           \---web
+        |               |   HelloControllerTest.java
+        |               |   IndexControllerTest.java
+        |               |   PostsApiControllerTest.java
+        |               |   
+        |               \---dto
+        |                       HelloResponseDtoTest.java
+        |                       
+        \---resources
+```
 
 ---------------- 
 
@@ -43,3 +140,9 @@ gradle 기반의 spring-boot 프로젝트 세팅
 - Mock User를 통한 테스트 환경 구성
 
 <br/>
+
+## CI/CD의 구현
+- AWS EC2 Instance 생성 및 설정
+- AWS RDS 세팅 및 EC2 연동
+- 배포 스크립트 작성
+- 
