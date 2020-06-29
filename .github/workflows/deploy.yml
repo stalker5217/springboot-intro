@@ -48,3 +48,6 @@ jobs:
           --recursive \
           --acl private \
           ./springboot-intro-build.zip s3://springboot-intro-build/
+
+      - name: checkDir
+        run: ls -l -R | grep springboot
