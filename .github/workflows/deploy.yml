@@ -44,7 +44,6 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run:
           aws s3 cp \
+          s3://springboot-intro-build/springboot-intro.zip \
           --region ap-northeast-2 \
-          --recursive \
-          --acl private \
-          s3://springboot-intro-build/springboot-intro.zip
+          --recursive
