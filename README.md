@@ -32,7 +32,7 @@ springboot_intro
 |  
 +---.github
 |   \---workflows
-|           gradle.yml
+|           deploy.yml
 |              
 \---src
     +---main
