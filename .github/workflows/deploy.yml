@@ -47,4 +47,4 @@ jobs:
           --region ap-northeast-2 \
           --recursive \
           --acl private \
-          ./springboot-intro-build.zip s3://springboot-intro-build
+          springboot-intro-build.zip s3://springboot-intro-build
