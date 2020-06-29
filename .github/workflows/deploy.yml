@@ -34,7 +34,7 @@ jobs:
         run: ./gradlew clean build
 
       - name: Make zip file
-        run: zip -r springboot-intro *
+        run: zip -r ./springboot-intro.zip ./*
 
       - name: Deliver to AWS S3
         env:
