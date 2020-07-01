@@ -54,7 +54,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          aws deploy create-deployment\
+          aws deploy create-deployment \
           --application-name springboot-intro \
           --s3-location bucket=springboot-intro-build,bundleType=zip,key=springboot-intro-build.zip \
           --deployment-group-name springboot-intro-deploy-group
