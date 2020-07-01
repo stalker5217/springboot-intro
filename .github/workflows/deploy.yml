@@ -57,5 +57,5 @@ jobs:
           aws deploy create-deployment \
           --application-name springboot-intro \
           --s3-location bucket=springboot-intro-build,bundleType=zip,key=springboot-intro-build.zip \
-          --deployment-group-name springboot-intro-deploy-group
+          --deployment-group-name springboot-intro-deploy-group \
           --region ap-northeast-2
