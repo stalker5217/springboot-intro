@@ -1,6 +1,9 @@
 REPOSITORY=/home/ec2-user/app
 PROJECT_NAME=spiringboot-intro
 
+echo "COPY JAR"
+cp $REPOSITORY/deploy/*.jar $REPOSITORY/
+
 echo "CHECK CURRENT PROCESS"
 CURRENT_PID=$(pgrep - fl springboot-intro | grep jar | awk '{print $1}')
 
