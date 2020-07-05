@@ -1,3 +1,5 @@
+REPOSITORY=/home/ec2-user/app
+PROJECT_NAME=spiringboot-intro
 
 echo "COPY JAR"
 cp $REPOSITORY/deploy/*.jar $REPOSITORY/
@@ -24,3 +26,5 @@ nohup java -jar \
 -Dspring.config.location=classpath:/application.properties,/home/ec2-user/app/application-oauth.properties,/home/ec2-user/app/application-real-db.properties \
 -Dspring.profiles.active=real \
 $JAR_NAME > $REPOSITORY/nohup.out 2>&1 &
+
+
