@@ -25,6 +25,7 @@
 ```
 springboot_intro
 |   .gitignore
+|   appspec.yml
 |   build.gradle
 |   gradlew
 |   gradlew.bat
@@ -34,7 +35,14 @@ springboot_intro
 +---.github
 |   \---workflows
 |           deploy.yml
-|              
+|
++---scripts
+|       health.sh
+|       profile.sh
+|       start.sh
+|       stop.sh
+|       switch.sh
+|     
 \---src
     +---main
     |   +---java
